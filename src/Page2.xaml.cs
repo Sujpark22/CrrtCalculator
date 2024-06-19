@@ -20,7 +20,7 @@ namespace CRRT_Calculator
                 bool answer = await DisplayAlert("", "Use the 'CRRT Calculator'", "Go", "Cancel");
                 if (answer)
                 {
-                    await Navigation.PushAsync(new crrtCalcPage());
+                    await Navigation.PushAsync(new crrtCalcInputPage());
                 }
             }
         }
@@ -32,7 +32,7 @@ namespace CRRT_Calculator
                 bool answer = await DisplayAlert("", "Use the 'CRRT Calculator'", "Go", "Cancel");
                 if (answer)
                 {
-                    await Navigation.PushAsync(new crrtCalcPage());
+                    await Navigation.PushAsync(new crrtCalcInputPage());
                 }
             }
         }

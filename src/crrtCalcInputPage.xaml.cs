@@ -5,9 +5,9 @@ using Microsoft.Extensions.Logging;
 
 namespace CRRT_Calculator
 {
-    public partial class crrtCalcPage : ContentPage
+    public partial class crrtCalcInputPage : ContentPage
     {
-        public crrtCalcPage()
+        public crrtCalcInputPage()
         {
             InitializeComponent();
         }
