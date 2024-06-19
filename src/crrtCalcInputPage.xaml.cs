@@ -173,7 +173,7 @@ namespace CRRT_Calculator
                 return;
             }
 
-            await Navigation.PushAsync(new Page1Display(mrn, dob, ecmo, weight, height, aqua, bloodFlowRate, heparin, citrate, liverDysfunction, heparinBolus, heparinDrip));
+            await Navigation.PushAsync(new crrtCalcOutputPage(mrn, dob, ecmo, weight, height, aqua, bloodFlowRate, heparin, citrate, liverDysfunction, heparinBolus, heparinDrip));
         }
     }
 }
