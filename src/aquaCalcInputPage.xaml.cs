@@ -6,9 +6,9 @@ using static Microsoft.Maui.ApplicationModel.Permissions;
 
 namespace CRRT_Calculator
 {
-    public partial class Page2 : ContentPage
+    public partial class aquaCalcInputPage : ContentPage
     {
-        public Page2()
+        public aquaCalcInputPage()
         {
             InitializeComponent();
         }
@@ -129,7 +129,7 @@ namespace CRRT_Calculator
                 return;
             }
 
-            await Navigation.PushAsync(new Page2Display(mrn, dob, clear, cand, mod, ecmo, weight, height, reinfusion, heparin, heparinBolus, heparinGTT, epop));
+            await Navigation.PushAsync(new AquaCalcOutputPage(mrn, dob, clear, cand, mod, ecmo, weight, height, reinfusion, heparin, heparinBolus, heparinGTT, epop));
         }
     }
 }

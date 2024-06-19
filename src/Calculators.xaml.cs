@@ -14,7 +14,7 @@
 
         private void Button2_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Page2());
+            Navigation.PushAsync(new aquaCalcInputPage());
         }
 
         private void Button3_Clicked(object sender, EventArgs e)

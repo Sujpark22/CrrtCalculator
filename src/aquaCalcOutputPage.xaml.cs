@@ -5,9 +5,9 @@ using static Microsoft.Maui.ApplicationModel.Permissions;
 
 namespace CRRT_Calculator
 {
-    public partial class Page2Display : ContentPage
+    public partial class AquaCalcOutputPage : ContentPage
     {
-        public Page2Display(string mrn, DateTime dob, string clear, string cand, string mod, string ecmo, string weight, string height, string reinfusion, string heparin, string heparinBolus, string heparinGTT, string epop)
+        public AquaCalcOutputPage(string mrn, DateTime dob, string clear, string cand, string mod, string ecmo, string weight, string height, string reinfusion, string heparin, string heparinBolus, string heparinGTT, string epop)
         {
             InitializeComponent();
 

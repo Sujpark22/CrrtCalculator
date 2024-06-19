@@ -135,7 +135,7 @@ namespace CRRT_Calculator
             {
                 anti = "Unknown";
             }
-            anticoLabel.Text = $"Anticoagulatioin: {anti}";
+            anticoLabel.Text = $"Anticoagulation: {anti}";
 
             //Citrate
             citLabel.Text = $"Citrate: {citDose}";

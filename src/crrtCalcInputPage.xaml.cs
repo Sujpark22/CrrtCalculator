@@ -35,7 +35,7 @@ namespace CRRT_Calculator
                 bool answer = await DisplayAlert("", "Use the 'Aquapheresis Calculator'", "Go", "Cancel");
                 if (answer)
                 {
-                    await Navigation.PushAsync(new Page2());
+                    await Navigation.PushAsync(new aquaCalcInputPage());
                 }
             }
         }
