@@ -44,7 +44,7 @@ namespace CRRT_Calculator
                 bool answer = await DisplayAlert("", "Use the 'CRRT on ECMO Calculator'", "Go", "Cancel");
                 if (answer)
                 {
-                    await Navigation.PushAsync(new Page3());
+                    await Navigation.PushAsync(new ecmoCalcInputPage());
                 }
             }
         }

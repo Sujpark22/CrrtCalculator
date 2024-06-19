@@ -6,9 +6,9 @@ using static Microsoft.Maui.ApplicationModel.Permissions;
 
 namespace CRRT_Calculator
 {
-    public partial class Page3 : ContentPage
+    public partial class ecmoCalcInputPage : ContentPage
     {
-        public Page3()
+        public ecmoCalcInputPage()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace CRRT_Calculator
                 return;
             }
 
-            await Navigation.PushAsync(new Page3Display(mrn, dob, weight, height, clear, antiEC, citrate));
+            await Navigation.PushAsync(new ecmoCalcOutputPage(mrn, dob, weight, height, clear, antiEC, citrate));
         }
     }
 }

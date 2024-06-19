@@ -19,7 +19,7 @@
 
         private void Button3_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Page3());
+            Navigation.PushAsync(new ecmoCalcInputPage());
         }
 
         private void Button4_Clicked(object sender, EventArgs e)

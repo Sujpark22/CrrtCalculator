@@ -5,9 +5,9 @@ using static Microsoft.Maui.ApplicationModel.Permissions;
 
 namespace CRRT_Calculator
 {
-    public partial class Page3Display : ContentPage
+    public partial class ecmoCalcOutputPage : ContentPage
     {
-        public Page3Display(string mrn, DateTime dob, string weight, string height, string clear, string antiEC, string citrate)
+        public ecmoCalcOutputPage(string mrn, DateTime dob, string weight, string height, string clear, string antiEC, string citrate)
         {
             InitializeComponent();
 
