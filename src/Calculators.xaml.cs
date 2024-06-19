@@ -9,7 +9,7 @@
 
         private void Button1_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Page1());
+            Navigation.PushAsync(new crrtCalcPage());
         }
 
         private void Button2_Clicked(object sender, EventArgs e)
