@@ -4,9 +4,9 @@ using Microsoft.Extensions.Logging;
 
 namespace CRRT_Calculator
 {
-    public partial class Page4Display : ContentPage
+    public partial class neonatalCrrtOutputPage : ContentPage
     {
-        public Page4Display(string mrn, DateTime dob, string weight, string height, string bloodFlowRate, string heparin, string citrate, string liverDysfunction, string heparinBolus, string heparinDrip)
+        public neonatalCrrtOutputPage(string mrn, DateTime dob, string weight, string height, string bloodFlowRate, string heparin, string citrate, string liverDysfunction, string heparinBolus, string heparinDrip)
         {
             InitializeComponent();
 

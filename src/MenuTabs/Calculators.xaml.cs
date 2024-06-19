@@ -24,7 +24,7 @@
 
         private void Button4_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Page4());
+            Navigation.PushAsync(new neonatalCrrtInputPage());
         }
 
     }
