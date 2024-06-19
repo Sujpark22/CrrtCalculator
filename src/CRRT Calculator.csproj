@@ -84,26 +84,26 @@
 	  <Compile Update="Calculators.xaml.cs">
 	    <DependentUpon>Calculators.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Page4Display.xaml.cs">
+	  <Compile Update="neonatalCrrtOutputPage.xaml.cs">
 	    <DependentUpon>Page4Display.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Page4.xaml.cs">
-	    <DependentUpon>Page4.xaml</DependentUpon>
+	  <Compile Update="neonatalCrrtInputPage.xaml.cs">
+	    <DependentUpon>neonatalCrrtInputPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="crrtCalcOutputPage.xaml.cs">
 	    <DependentUpon>crrtCalcOutputPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Page4Display.xaml.cs">
-	    <DependentUpon>Page4Display.xaml</DependentUpon>
+	  <Compile Update="neonatalCrrtOutputPage.xaml.cs">
+	    <DependentUpon>neonatalCrrtOutputPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Page3Display.xaml.cs">
-	    <DependentUpon>Page3Display.xaml</DependentUpon>
+	  <Compile Update="ecmoCalcOutputPage.xaml.cs">
+	    <DependentUpon>ecmoCalcOutputPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="aquaCalcOutputPage.xaml.cs">
 	    <DependentUpon>aquaCalcOutputPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Page3.xaml.cs">
-	    <DependentUpon>Page3.xaml</DependentUpon>
+	  <Compile Update="ecmoCalcInputPage.xaml.cs">
+	    <DependentUpon>ecmoCalcInputPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="aquaCalcInputPage.xaml.cs">
 	    <DependentUpon>aquaCalcInputPage.xaml</DependentUpon>
@@ -132,25 +132,25 @@
 	  <MauiXaml Update="HeparinDose.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Page4Display.xaml">
+	  <MauiXaml Update="neonatalCrrtOutputPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Page4.xaml">
+	  <MauiXaml Update="neonatalCrrtInputPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="crrtCalcOutputPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Page4Display.xaml">
+	  <MauiXaml Update="neonatalCrrtOutputPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Page3Display.xaml">
+	  <MauiXaml Update="ecmoCalcOutputPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="aquaCalcOutputPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Page3.xaml">
+	  <MauiXaml Update="ecmoCalcInputPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="aquaCalcInputPage.xaml">
