@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRRT_Calculator.Calculators">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Title Label -->
+        <Label 
+            Text="Calculators" 
+            FontSize="30" 
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Margin="0,20,0,20"/>
+
+        <ScrollView Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button 
+                    Text="CRRT Calculator" 
+                    FontSize="25"
+                    Grid.Row="0" 
+                    Grid.Column="0" 
+                    Clicked="Button1_Clicked" 
+                    BackgroundColor="LightBlue" 
+                    Margin="30" />
+                <Button 
+                    Text="Aquapheresis Calculator"
+                    FontSize="25"
+                    Grid.Row="0" 
+                    Grid.Column="1" 
+                    Clicked="Button2_Clicked" 
+                    BackgroundColor="LightGreen" 
+                    Margin="30" />
+                <Button 
+                    Text="CRRT on ECMO"
+                    FontSize="25"
+                    Grid.Row="1" 
+                    Grid.Column="0" 
+                    Clicked="Button3_Clicked" 
+                    BackgroundColor="LightPink" 
+                    Margin="30" />
+                <Button 
+                    Text="CRRT for Neonatal Hyper NH3"
+                    FontSize="25"
+                    Grid.Row="1" 
+                    Grid.Column="1"
+                    Clicked="Button4_Clicked" 
+                    BackgroundColor="LightSalmon" 
+                    Margin="30" />
+            </Grid>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

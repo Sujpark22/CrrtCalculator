@@ -1,0 +1,25 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRRT_Calculator.Page4Display">
+    <ScrollView>
+        <StackLayout Margin="20">
+
+            <Label Text="Presciption Details" FontSize="25" Margin="0,30,0,0" HorizontalOptions="Center" TextColor="FloralWhite" />
+
+            <Label x:Name="mrnLabel" TextColor="FloralWhite"/>
+            <Label x:Name="accessLabel" TextColor="FloralWhite"/>
+            <Label x:Name="filterLabel" TextColor="FloralWhite"/>
+            <Label x:Name="bfrLabel" TextColor="FloralWhite"/>
+            <Label x:Name="diaLabel" TextColor="FloralWhite"/>
+            <Label x:Name="pbpLabel" TextColor="FloralWhite"/>
+            <Label x:Name="postLabel" TextColor="FloralWhite"/>
+            <Label x:Name="calcGTTLabel" TextColor="FloralWhite"/>
+            <Label x:Name="anticoLabel" TextColor="FloralWhite"/>
+            <Label x:Name="citLabel" TextColor="FloralWhite"/>
+            <Label x:Name="hepBolusLabel" TextColor="FloralWhite"/>
+            <Label x:Name="hepGTTLabel" TextColor="FloralWhite"/>
+            <Label x:Name="bloodPrimeLabel" TextColor="FloralWhite"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

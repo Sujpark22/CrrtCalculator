@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CRRT_Calculator.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CRRT_Calculator"
+    Title="CRRT_Calculator">
+
+    <FlyoutItem Title="About">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
+        </Tab>
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Calculators">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:Calculators}" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Calcium Ratio">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:CalciumRatio}" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Resources">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:Resources}" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Checklist">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:Checklist}" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Acknowledgements">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:Acknowledgements}" />
+        </Tab>
+    </FlyoutItem>
+
+    <ShellContent
+        Route="AboutPage"
+        ContentTemplate="{DataTemplate local:AboutPage}" />
+
+</Shell>
