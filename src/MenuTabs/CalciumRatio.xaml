@@ -18,6 +18,8 @@
         <Entry x:Name="patLabel" Margin="0,5,0,0" TextChanged="RatioTextChanged"/>
 
         <Label Text="Calcium Ratio: -" x:Name="calcRatLabel" Margin="0,20,0,0" TextColor="LightBlue"/>
-    
+
+        <Label x:Name="warningLabel" Text="" TextColor="Red" IsVisible="False" Margin="0,10,0,0"/>
+
     </StackLayout>
 </ContentPage>

@@ -15,18 +15,21 @@ namespace CRRT_Calculator
         {
             InitializeComponent();
 
-            weightD = double.Parse(weight);
-            //heparin 10
-            hep10 = (heparin == "Yes") ? 10 * weightD : 0;
-            hep10Label.Text = $"Heparin 10 units/kg: {hep10}";
+            if (heparin != null)
+            {
+                weightD = double.Parse(weight);
+                //heparin 10
+                hep10 = (heparin == "Yes") ? 10 * weightD : 0;
+                hep10Label.Text = $"Heparin 10 units/kg: {hep10}";
 
-            //heparin 20
-            hep20 = (heparin == "Yes") ? 20 * weightD : 0;
-            hep20Label.Text = $"Heparin 20 units/kg: {hep20}";
+                //heparin 20
+                hep20 = (heparin == "Yes") ? 20 * weightD : 0;
+                hep20Label.Text = $"Heparin 20 units/kg: {hep20}";
 
-            //heparin30
-            hep30 = (heparin == "Yes") ? 30 * weightD : 0;
-            hep30Label.Text = $"Heparin 30 units/kg: {hep30}";
+                //heparin30
+                hep30 = (heparin == "Yes") ? 30 * weightD : 0;
+                hep30Label.Text = $"Heparin 30 units/kg: {hep30}";
+            }
 
         }
 

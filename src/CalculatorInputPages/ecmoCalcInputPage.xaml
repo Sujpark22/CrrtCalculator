@@ -33,7 +33,7 @@
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Heparin</x:String>
-                        <x:String>Bivalrudin</x:String>
+                        <x:String>Bivalirudin</x:String>
                         <x:String>None</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
