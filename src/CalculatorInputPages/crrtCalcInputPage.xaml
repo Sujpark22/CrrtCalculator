@@ -41,7 +41,6 @@
 
             <Label x:Name="minBFRLabel" Margin="0,20,0,0" TextColor="LightBlue"/>
             <Label x:Name="maxBFRLabel" Margin="0,5,0,0" TextColor="LightBlue"/>
-            
 
             <Label Text=" Blood flow rate chosen (ml/min)" Margin="0,20,0,0"/>
             <Label Text ="*MAX 150 ml/min*" Margin="0,5, 0, 0" TextColor="Red"/>

@@ -75,6 +75,10 @@ namespace CRRT_Calculator
 
             else if (hepPicker.SelectedItem.ToString() == "Yes")
             {
+                hepBolLabel.IsVisible = true;
+                hepBolusEntry.IsVisible = true;
+                hepDripLabel.IsVisible = true;
+                hepDripEntry.IsVisible = true;
                 string heparin = hepPicker.SelectedItem.ToString();
                 string weight = weightEntry.Text;
                 var hepWS = new Window(new HeparinDose(heparin, weight));
