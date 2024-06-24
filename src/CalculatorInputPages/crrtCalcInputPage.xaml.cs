@@ -116,32 +116,39 @@ namespace CRRT_Calculator
                 }
 
             }
+            UpdateHeparinFields();
         }
 
-        private async void OnHepPickerSelectedIndexChanged(object sender, EventArgs e)
+        private void OnHepPickerSelectedIndexChanged(object sender, EventArgs e)
         {
-            bool isHeparinNo = hepPicker.SelectedItem.ToString() == "No";
-            bool isHeparinYes = hepPicker.SelectedItem.ToString() == "Yes";
+            UpdateHeparinFields();
+        }
 
-            if (isHeparinNo)
+        private void UpdateHeparinFields()
+        {
+            if (hepPicker.SelectedItem == null || string.IsNullOrEmpty(weightEntry.Text) || !double.TryParse(weightEntry.Text, out double weightD))
             {
                 hepBolLabel.IsVisible = false;
                 hepBolusEntry.IsVisible = false;
                 hepDripLabel.IsVisible = false;
                 hepDripEntry.IsVisible = false;
-                 
+                return;
             }
-            else if(isHeparinYes)
-            {
-                hepBolLabel.IsVisible = true;
-                hepBolusEntry.IsVisible = true;
-                hepDripLabel.IsVisible = true;
-                hepDripEntry.IsVisible = true;
 
-                string heparin = hepPicker.SelectedItem?.ToString();
+            else if (hepPicker.SelectedItem.ToString() == "Yes")
+            {
+                string heparin = hepPicker.SelectedItem.ToString();
                 string weight = weightEntry.Text;
                 var hepWS = new Window(new HeparinDose(heparin, weight));
-                Application.Current.OpenWindow(hepWS);
+
+                if (DeviceInfo.Platform == DevicePlatform.WinUI)
+                {
+                    Application.Current.OpenWindow(hepWS);
+                }
+                else if (DeviceInfo.Platform == DevicePlatform.Android || DeviceInfo.Platform == DevicePlatform.iOS)
+                {
+                    Navigation.PushAsync(new HeparinDose(heparin, weight));
+                }
             }
         }
 

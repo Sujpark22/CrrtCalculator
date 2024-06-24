@@ -17,7 +17,7 @@ namespace CRRT_Calculator
 
             if (heparin != null)
             {
-                weightD = double.Parse(weight);
+                double weightD = double.Parse(weight);
                 //heparin 10
                 hep10 = (heparin == "Yes") ? 10 * weightD : 0;
                 hep10Label.Text = $"Heparin 10 units/kg: {hep10}";
