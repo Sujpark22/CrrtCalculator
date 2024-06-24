@@ -87,6 +87,10 @@ namespace CRRT_Calculator
 
             else if(hepPicker.SelectedItem.ToString() == "Yes")
             {
+                hepBolLabel.IsVisible = true;
+                hepBolusEntry.IsVisible = true;
+                hepGTTLabel.IsVisible = true;
+                hepGTTEntry.IsVisible = true;
                 string heparin = hepPicker.SelectedItem.ToString();
                 string weight = weightEntry.Text;
                 var hepWS = new Window(new HeparinDose(heparin, weight));
@@ -127,8 +131,6 @@ namespace CRRT_Calculator
                 string.IsNullOrWhiteSpace(height) ||
                 string.IsNullOrWhiteSpace(reinfusion) ||
                 string.IsNullOrWhiteSpace(heparin) ||
-                string.IsNullOrWhiteSpace(heparinBolus) ||
-                string.IsNullOrWhiteSpace(heparinGTT) ||
                 string.IsNullOrWhiteSpace(epop) ||
                 (heparin == "Yes" && (string.IsNullOrWhiteSpace(heparinBolus) || string.IsNullOrWhiteSpace(heparinGTT))))
             {
