@@ -6,9 +6,9 @@ using static Microsoft.Maui.ApplicationModel.Permissions;
 
 namespace CRRT_Calculator
 {
-    public partial class aquaCalcInputPage : ContentPage
+    public partial class AquaCalcInputPage : ContentPage
     {
-        public aquaCalcInputPage()
+        public AquaCalcInputPage()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace CRRT_Calculator
                 bool answer = await DisplayAlert("", "Use the 'CRRT Calculator'", "Go", "Cancel");
                 if (answer)
                 {
-                    await Navigation.PushAsync(new crrtCalcInputPage());
+                    await Navigation.PushAsync(new CrrtCalcInputPage());
                 }
             }
         }
@@ -32,7 +32,7 @@ namespace CRRT_Calculator
                 bool answer = await DisplayAlert("", "Use the 'CRRT Calculator'", "Go", "Cancel");
                 if (answer)
                 {
-                    await Navigation.PushAsync(new crrtCalcInputPage());
+                    await Navigation.PushAsync(new CrrtCalcInputPage());
                 }
             }
         }
@@ -44,7 +44,7 @@ namespace CRRT_Calculator
                 bool answer = await DisplayAlert("", "Use the 'CRRT on ECMO Calculator'", "Go", "Cancel");
                 if (answer)
                 {
-                    await Navigation.PushAsync(new ecmoCalcInputPage());
+                    await Navigation.PushAsync(new EcmoCalcInputPage());
                 }
             }
         }

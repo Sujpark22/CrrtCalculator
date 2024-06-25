@@ -66,6 +66,30 @@
 	  <Compile Update="Acknowledgements.xaml.cs">
 	    <DependentUpon>Acknowledgements.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="CalculatorInputPages\aquaCalcInputPage.xaml.cs">
+	    <DependentUpon>AquaCalcInputPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="CalculatorInputPages\crrtCalcInputPage.xaml.cs">
+	    <DependentUpon>CrrtCalcInputPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="CalculatorInputPages\ecmoCalcInputPage.xaml.cs">
+	    <DependentUpon>EcmoCalcInputPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="CalculatorInputPages\neonatalCrrtInputPage.xaml.cs">
+	    <DependentUpon>NeonatalCrrtInputPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="CalculatorOutputPages\aquaCalcOutputPage.xaml.cs">
+	    <DependentUpon>AquaCalcOutputPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="CalculatorOutputPages\crrtCalcOutputPage.xaml.cs">
+	    <DependentUpon>CrrtCalcOutputPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="CalculatorOutputPages\ecmoCalcOutputPage.xaml.cs">
+	    <DependentUpon>EcmoCalcOutputPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="CalculatorOutputPages\neonatalCrrtOutputPage.xaml.cs">
+	    <DependentUpon>NeonatalCrrtOutputPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Checklist.xaml.cs">
 	    <DependentUpon>Checklist.xaml</DependentUpon>
 	  </Compile>

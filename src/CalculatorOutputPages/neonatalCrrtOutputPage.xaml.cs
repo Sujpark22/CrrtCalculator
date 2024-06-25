@@ -4,9 +4,9 @@ using Microsoft.Extensions.Logging;
 
 namespace CRRT_Calculator
 {
-    public partial class neonatalCrrtOutputPage : ContentPage
+    public partial class NeonatalCrrtOutputPage : ContentPage
     {
-        public neonatalCrrtOutputPage(string mrn, DateTime dob, string weight, string height, string bloodFlowRate, string heparin, string citrate, string liverDysfunction, string heparinBolus, string heparinDrip)
+        public NeonatalCrrtOutputPage(string mrn, DateTime dob, string weight, string height, string bloodFlowRate, string heparin, string citrate, string liverDysfunction, string heparinBolus, string heparinDrip)
         {
             InitializeComponent();
 
@@ -15,7 +15,7 @@ namespace CRRT_Calculator
             mrnLabel.Text = $"Patient mrn: {mrn}";
 
             //access
-            String access = "";
+            String access;
             double weightD = double.Parse(weight);
             if (weightD >= 1.8 && weightD < 10)
             {
@@ -36,7 +36,7 @@ namespace CRRT_Calculator
             accessLabel.Text = $"Access: {access}";
 
             //Filter
-            String filter = "";
+            String filter;
             if (weightD <= 12)
             {
                 filter = "HF20";
@@ -123,7 +123,7 @@ namespace CRRT_Calculator
             {
                 anti = "Heparin";
             }
-            if (citrate == "Yes")
+            if (heparin == "No" && citrate == "Yes")
             {
                 anti = "Citrate";
             }
@@ -131,10 +131,7 @@ namespace CRRT_Calculator
             {
                 anti = "None or Epoprostenol";
             }
-            else
-            {
-                anti = "Unknown";
-            }
+
             anticoLabel.Text = $"Anticoagulation: {anti}";
 
             //Citrate

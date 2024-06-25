@@ -16,7 +16,7 @@ namespace CRRT_Calculator
 
             //access
             double weightD = double.Parse(weight);
-            string access = "";
+            string access;
             if (weightD < 3 && weightD >= 1.8)
             {
                 access = "5Fr PICC no longer than 10-12cm";

@@ -5,9 +5,9 @@ using Microsoft.Extensions.Logging;
 
 namespace CRRT_Calculator
 {
-    public partial class crrtCalcInputPage : ContentPage
+    public partial class CrrtCalcInputPage : ContentPage
     {
-        public crrtCalcInputPage()
+        public CrrtCalcInputPage()
         {
             InitializeComponent();
         }
@@ -19,7 +19,7 @@ namespace CRRT_Calculator
                 bool answer = await DisplayAlert("", "Use the 'CRRT on ECMO Calculator'", "Go", "Cancel");
                 if (answer)
                 {
-                    await Navigation.PushAsync(new ecmoCalcInputPage());
+                    await Navigation.PushAsync(new EcmoCalcInputPage());
                 }
             }
         }
@@ -35,7 +35,7 @@ namespace CRRT_Calculator
                 bool answer = await DisplayAlert("", "Use the 'Aquapheresis Calculator'", "Go", "Cancel");
                 if (answer)
                 {
-                    await Navigation.PushAsync(new aquaCalcInputPage());
+                    await Navigation.PushAsync(new AquaCalcInputPage());
                 }
             }
         }
@@ -184,7 +184,7 @@ namespace CRRT_Calculator
                 return;
             }
 
-            await Navigation.PushAsync(new crrtCalcOutputPage(mrn, dob, ecmo, weight, height, aqua, bloodFlowRate, heparin, citrate, liverDysfunction, heparinBolus, heparinDrip));
+            await Navigation.PushAsync(new CrrtCalcOutputPage(mrn, dob, ecmo, weight, height, aqua, bloodFlowRate, heparin, citrate, liverDysfunction, heparinBolus, heparinDrip));
         }
     }
 }

@@ -7,10 +7,9 @@ namespace CRRT_Calculator
 {
     public partial class HeparinDose : ContentPage
     {
-        private double weightD;
-        private double hep10;
-        private double hep20;
-        private double hep30;
+        private readonly double hep10;
+        private readonly double hep20;
+        private readonly double hep30;
         public HeparinDose(string heparin, string weight)
         {
             InitializeComponent();
@@ -67,7 +66,7 @@ namespace CRRT_Calculator
 
 
             //Suggested heparin bolus (based on PTT)
-            string bolusPTT = "";
+            string bolusPTT;
             double prePTTD = double.Parse(prePTT);
             if (prePTTD <= 15)
             {

@@ -9,22 +9,22 @@
 
         private void Button1_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new crrtCalcInputPage());
+            Navigation.PushAsync(new CrrtCalcInputPage());
         }
 
         private void Button2_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new aquaCalcInputPage());
+            Navigation.PushAsync(new AquaCalcInputPage());
         }
 
         private void Button3_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ecmoCalcInputPage());
+            Navigation.PushAsync(new EcmoCalcInputPage());
         }
 
         private void Button4_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new neonatalCrrtInputPage());
+            Navigation.PushAsync(new NeonatalCrrtInputPage());
         }
 
     }

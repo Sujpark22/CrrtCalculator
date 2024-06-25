@@ -5,9 +5,9 @@ using Microsoft.Extensions.Logging;
 
 namespace CRRT_Calculator
 {
-    public partial class neonatalCrrtInputPage : ContentPage
+    public partial class NeonatalCrrtInputPage : ContentPage
     {
-        public neonatalCrrtInputPage()
+        public NeonatalCrrtInputPage()
         {
             InitializeComponent();
         }
@@ -120,7 +120,7 @@ namespace CRRT_Calculator
                 await DisplayAlert("Error", "Please fill out all required fields.", "OK");
                 return;
             }
-            await Navigation.PushAsync(new neonatalCrrtOutputPage(mrn, dob, weight, height, bloodFlowRate, heparin, citrate, liverDysfunction, heparinBolus, heparinDrip));
+            await Navigation.PushAsync(new NeonatalCrrtOutputPage(mrn, dob, weight, height, bloodFlowRate, heparin, citrate, liverDysfunction, heparinBolus, heparinDrip));
         }
     }
 }

@@ -5,9 +5,9 @@ using static Microsoft.Maui.ApplicationModel.Permissions;
 
 namespace CRRT_Calculator
 {
-    public partial class ecmoCalcOutputPage : ContentPage
+    public partial class EcmoCalcOutputPage : ContentPage
     {
-        public ecmoCalcOutputPage(string mrn, DateTime dob, string weight, string height, string clear, string antiEC, string citrate)
+        public EcmoCalcOutputPage(string mrn, DateTime dob, string weight, string height, string clear, string antiEC, string citrate)
         {
             InitializeComponent();
 
@@ -17,7 +17,7 @@ namespace CRRT_Calculator
             //filter
             double weightD = double.Parse(weight);
             double heightD = double.Parse(height);
-            string filter = "";
+            string filter;
             filter = (weightD <= 12 && clear == "No") ? "CVVHD via HemoCor" :
                 (weightD <= 12 && clear == "Yes") ? "ST60" :
                 (weightD > 12 && weightD < 20) ? "ST60" :
