@@ -69,6 +69,9 @@
 	  <Compile Update="Checklist.xaml.cs">
 	    <DependentUpon>Checklist.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="MenuTabs\Videos.xaml.cs">
+	    <DependentUpon>Videos.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Resources.xaml.cs">
 	    <DependentUpon>Resources.xaml</DependentUpon>
 	  </Compile>
@@ -118,6 +121,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Checklist.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MenuTabs\Videos.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Resources.xaml">

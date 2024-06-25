@@ -36,6 +36,12 @@
         </Tab>
     </FlyoutItem>
 
+    <FlyoutItem Title="Videos">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:Videos}" />
+        </Tab>
+    </FlyoutItem>
+
     <FlyoutItem Title="Acknowledgements">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate local:Acknowledgements}" />

@@ -63,7 +63,7 @@ namespace CRRT_Calculator
             {
                 bolusACT = "Unknown";
             }
-            bolusACTLabel.Text = $"Suggested heparin bolus (based on ACT): {bolusACT}";
+            bolusACTLabel.Text = $"Suggested heparin bolus (based on ACT):     {bolusACT}";
 
 
             //Suggested heparin bolus (based on PTT)
@@ -89,7 +89,7 @@ namespace CRRT_Calculator
             {
                 bolusPTT = "Unknown";
             }
-            bolusPTTLabel.Text = $"Suggested heparin bolus (based on PTT): {bolusPTT}";
+            bolusPTTLabel.Text = $"Suggested heparin bolus (based on PTT):     {bolusPTT}";
         }
     }
 }
