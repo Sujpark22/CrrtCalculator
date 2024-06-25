@@ -49,9 +49,9 @@ namespace CRRT_Calculator
             }
         }
 
-        private void OnWeightEntryTextChanged(object sender, TextChangedEventArgs e)
+        private void OnWeightEntryUnfocused(object sender, FocusEventArgs e)
         {
-            if (double.TryParse(e.NewTextValue, out double weight))
+            if (double.TryParse(weightEntry.Text, out double weight))
             {
                 if (weight > 12)
                 {
@@ -76,7 +76,7 @@ namespace CRRT_Calculator
 
         private void UpdateHeparinFields()
         {
-            if (hepPicker.SelectedItem == null || string.IsNullOrEmpty(weightEntry.Text) || !double.TryParse(weightEntry.Text, out double weightD))
+            if (hepPicker.SelectedItem == null || hepPicker.SelectedItem.ToString() == "No" || string.IsNullOrEmpty(weightEntry.Text) || !double.TryParse(weightEntry.Text, out double weightD))
             {
                 hepBolLabel.IsVisible = false;
                 hepBolusEntry.IsVisible = false;

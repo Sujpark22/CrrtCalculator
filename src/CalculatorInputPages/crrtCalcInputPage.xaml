@@ -23,7 +23,7 @@
 			</Picker>
 
 			<Label Text=" Weight (kg)" Margin="0,25,0,0"/>
-			<Entry x:Name="weightEntry" Placeholder="Enter weight" TextChanged="OnWeightEntryTextChanged" Margin="0,5,0,0"/>
+			<Entry x:Name="weightEntry" Placeholder="Enter weight" Unfocused="OnWeightEntryUnfocused" Margin="0,5,0,0"/>
 			<Label x:Name="warningLabel" TextColor="Red" Margin="0,5,0,0"/>
 
 			<Label Text=" Height (cm)" Margin="0,25,0,0"/>

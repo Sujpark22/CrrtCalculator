@@ -17,9 +17,10 @@ namespace CRRT_Calculator
             CalculateBloodFlowRates();
         }
 
-        private void OnWeightEntryTextChanged(object sender, TextChangedEventArgs e)
+        private void OnWeightEntryUnfocused(object sender, FocusEventArgs e)
         {
             CalculateBloodFlowRates();
+            UpdateHeparinFields();
         }
 
         private void CalculateBloodFlowRates()
@@ -64,7 +65,7 @@ namespace CRRT_Calculator
 
         private void UpdateHeparinFields()
         {
-            if (hepPicker.SelectedItem == null || string.IsNullOrEmpty(weightEntry.Text) || !double.TryParse(weightEntry.Text, out double weightD))
+            if (hepPicker.SelectedItem == null || hepPicker.SelectedItem.ToString() == "No" || string.IsNullOrEmpty(weightEntry.Text) || !double.TryParse(weightEntry.Text, out double weightD))
             {
                 hepBolLabel.IsVisible = false;
                 hepBolusEntry.IsVisible = false;
