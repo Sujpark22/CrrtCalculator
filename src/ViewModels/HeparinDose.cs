@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace CRRT_Calculator.ViewModels;
 
-class HeparinDose : INotifyPropertyChanged
+class HeparinDose : ObservableObject
 {
 	public HeparinDose(string? heparin, string weight)
 	{
@@ -33,11 +29,6 @@ class HeparinDose : INotifyPropertyChanged
 
 	string _bolusACT, _bolusPTT;
 
-	public event PropertyChangedEventHandler? PropertyChanged;
-
-	public void OnPropertyChanged([CallerMemberName] string name = "") =>
-		PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-
 	public string hep10Label { get; }
 	public string hep20Label { get; }
 	public string hep30Label { get; }
@@ -48,21 +39,13 @@ class HeparinDose : INotifyPropertyChanged
 	public string bolusACT
 	{
 		get => _bolusACT;
-		private set
-		{
-			_bolusACT = value;
-			OnPropertyChanged();
-		}
+		private set => SetProperty(ref _bolusACT, value);
 	}
 
 	public string bolusPTT
 	{
 		get => _bolusPTT;
-		private set
-		{
-			_bolusPTT = value;
-			OnPropertyChanged();
-		}
+		private set => SetProperty(ref _bolusPTT, value);
 	}
 
 	public void Calculate()
