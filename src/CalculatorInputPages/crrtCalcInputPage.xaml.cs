@@ -81,6 +81,7 @@ namespace CRRT_Calculator
             {
                 await ClearWarning();
             }
+            UpdateHeparinFields();
         }
 
         private void CalculateBloodFlowRates()
@@ -116,7 +117,6 @@ namespace CRRT_Calculator
                 }
 
             }
-            UpdateHeparinFields();
         }
 
         private void OnHepPickerSelectedIndexChanged(object sender, EventArgs e)

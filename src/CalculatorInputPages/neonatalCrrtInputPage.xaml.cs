@@ -65,7 +65,8 @@ namespace CRRT_Calculator
 
         private void UpdateHeparinFields()
         {
-            if (hepPicker.SelectedItem == null || hepPicker.SelectedItem.ToString() == "No" || string.IsNullOrEmpty(weightEntry.Text) || !double.TryParse(weightEntry.Text, out double weightD))
+            
+            if (hepPicker == null || hepPicker.SelectedItem.ToString() == "No" || string.IsNullOrEmpty(weightEntry.Text) || !double.TryParse(weightEntry.Text, out double weightD))
             {
                 hepBolLabel.IsVisible = false;
                 hepBolusEntry.IsVisible = false;
