@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CRRT_Calculator.Checklist">
 
-    <Label Text="Checklist" FontSize="25" HorizontalOptions="Center" TextColor="White" />
+    <Label Text="Checklist" FontSize="25" HorizontalOptions="Center" />
 
 
 </ContentPage>

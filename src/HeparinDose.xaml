@@ -9,22 +9,22 @@
             <Label Text="Heparin Dose Worksheet" FontSize="25" Margin="0,30,0,10" HorizontalOptions="Center" TextColor="White" />
 
 
-			<Label Text="{Binding hep10Label}" Margin ="0,10,0,0" TextColor="LightBlue"/>
-			<Label Text="{Binding hep20Label}" x:Name="hep20Label" TextColor="LightBlue"/>
-			<Label Text="{Binding hep30Label}" TextColor="LightBlue"/>
+			<Label Text="{Binding hep10Label}" Margin ="0,10,0,0" TextColor="Blue"/>
+			<Label Text="{Binding hep20Label}" x:Name="hep20Label" TextColor="Blue"/>
+			<Label Text="{Binding hep30Label}" TextColor="Blue"/>
             
             <Label Text="Pre-ACT" Margin="0,20,0,0"/>
-            <Entry Text="{Binding preACT}" Margin="0,5,0,0"/>
+            <Entry Text="{Binding preACT}" BackgroundColor="LightGray" Margin="0,5,0,0"/>
 
 
             <Label Text="Pre-PTT" Margin="0,20,0,0"/>
-			<Entry  Text="{Binding prePTT}" Margin="0,5,0,0"/>
+            <Entry  Text="{Binding prePTT}" BackgroundColor="LightGray" Margin="0,5,0,0"/>
 
             <Button Text="Calculate" Clicked="OnCalculateClicked" Margin="0,25,0,0"/>
 
 
-            <Label Text="{Binding bolusACT}" Margin ="0,10,0,0" TextColor="GreenYellow"/>
-			<Label Text="{Binding bolusPTT}" TextColor="GreenYellow"/> 
+            <Label Text="{Binding bolusACT}" Margin ="0,10,0,0" TextColor="Green" />
+            <Label Text="{Binding bolusPTT}" TextColor="Green" /> 
 
 
         </StackLayout>

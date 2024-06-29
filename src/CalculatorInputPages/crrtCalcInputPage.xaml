@@ -4,16 +4,16 @@
 	<ScrollView>
 		<StackLayout Margin="20">
 
-			<Label Text="CRRT Calculator" FontSize="25" HorizontalOptions="Center" TextColor="White" />
+			<Label Text="CRRT Calculator" FontSize="25" HorizontalOptions="Center" />
 
 			<Label Text=" Patient MRN" />
-			<Entry x:Name="mrnEntry" Placeholder="Enter Patient MRN" Margin="0,5,0,0"/>
+            <Entry x:Name="mrnEntry" BackgroundColor="LightGray" Margin="0,5,0,0"/>
 
 			<Label Text=" Date of Birth" Margin="0,25,0,0"/>
-            <DatePicker x:Name="dobPicker" Margin="0,5,0,0" DateSelected="OnDobPickerDateSelected"/>
+            <DatePicker x:Name="dobPicker" BackgroundColor="LightGray" Margin="0,5,0,0" DateSelected="OnDobPickerDateSelected"/>
 
 			<Label Text=" Is patient on ECMO (yes or no)" Margin="0,25,0,0"/>
-			<Picker x:Name="ecmoPicker" SelectedIndexChanged="OnEcmoPickerSelectedIndexChanged" Margin="0,5,0,0">
+            <Picker x:Name="ecmoPicker" SelectedIndexChanged="OnEcmoPickerSelectedIndexChanged" BackgroundColor="LightGray" Margin="0,5,0,0">
 				<Picker.ItemsSource>
 					<x:Array Type="{x:Type x:String}">
 						<x:String>Yes</x:String>
@@ -23,14 +23,14 @@
 			</Picker>
 
 			<Label Text=" Weight (kg)" Margin="0,25,0,0"/>
-			<Entry x:Name="weightEntry" Placeholder="Enter weight" Unfocused="OnWeightEntryUnfocused" Margin="0,5,0,0"/>
+            <Entry x:Name="weightEntry" BackgroundColor="LightGray" Unfocused="OnWeightEntryUnfocused" Margin="0,5,0,0"/>
 			<Label x:Name="warningLabel" TextColor="Red" Margin="0,5,0,0"/>
 
 			<Label Text=" Height (cm)" Margin="0,25,0,0"/>
-			<Entry x:Name="heightEntry" Placeholder="Enter height" Margin="0,5,0,0"/>
+            <Entry x:Name="heightEntry" BackgroundColor="LightGray" Margin="0,5,0,0"/>
 
 			<Label Text="Aquapheresis (yes or no)" Margin="0,30,0,0"/>
-			<Picker x:Name="aquaPicker" SelectedIndexChanged="OnAquaPickerSelectedIndexChanged" Margin="0,5,0,0">
+            <Picker x:Name="aquaPicker" BackgroundColor="LightGray" SelectedIndexChanged="OnAquaPickerSelectedIndexChanged" Margin="0,5,0,0">
 				<Picker.ItemsSource>
 					<x:Array Type="{x:Type x:String}">
 						<x:String>Yes</x:String>
@@ -39,17 +39,17 @@
 				</Picker.ItemsSource>
 			</Picker>
 
-            <Label x:Name="minBFRLabel" Margin="0,20,0,0" TextColor="LightBlue"/>
-            <Label x:Name="maxBFRLabel" Margin="0,5,0,0" TextColor="LightBlue"/>
+            <Label x:Name="minBFRLabel" Margin="0,20,0,0" HorizontalOptions="Center" TextColor="Blue" />
+            <Label x:Name="maxBFRLabel" Margin="0,5,0,0" HorizontalOptions="Center" TextColor="Blue"  />
 
             <Label Text=" Blood flow rate chosen (ml/min)" Margin="0,20,0,0"/>
             <Label Text ="*MAX 150 ml/min*" Margin="0,5, 0, 0" TextColor="Red"/>
-			<Entry x:Name="BFEntry" Placeholder="Enter the blood flow rate" TextChanged="OnBFEntryTextChanged" Margin="0,5,0,0"/>
+            <Entry x:Name="BFEntry" BackgroundColor="LightGray" TextChanged="OnBFEntryTextChanged" Margin="0,5,0,0"/>
            
             <Label Text="Anticoagulation" HorizontalOptions="Center" FontSize="Title" Margin="0,40,0,10"/>
 
 			<Label Text="Citrate (yes or no)" Margin="0,20,0,0"/>
-			<Picker x:Name="citPicker" Margin="0,10,0,0">
+            <Picker x:Name="citPicker" BackgroundColor="LightGray" Margin="0,10,0,0">
 				<Picker.ItemsSource>
 					<x:Array Type="{x:Type x:String}">
 						<x:String>Yes</x:String>
@@ -59,7 +59,7 @@
 			</Picker>
 
 			<Label Text="Liver dysfunction (yes or no)" Margin="0,20,0,0"/>
-			<Picker x:Name="livPicker" Margin="0,5,0,0">
+            <Picker x:Name="livPicker" BackgroundColor="LightGray" Margin="0,5,0,0">
 				<Picker.ItemsSource>
 					<x:Array Type="{x:Type x:String}">
 						<x:String>Yes</x:String>
@@ -69,7 +69,7 @@
 			</Picker>
 
             <Label Text="Heparin (yes or no)" Margin="0,10,0,0"/>
-            <Picker x:Name="hepPicker" SelectedIndexChanged="OnHepPickerSelectedIndexChanged" Margin="0,5,0,0">
+            <Picker x:Name="hepPicker" BackgroundColor="LightGray" SelectedIndexChanged="OnHepPickerSelectedIndexChanged" Margin="0,5,0,0">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Yes</x:String>
@@ -79,10 +79,10 @@
             </Picker>
 
             <Label x:Name ="hepBolLabel" Text="Heparin Bolus chosen (total units)" Margin="0,20,0,0" IsVisible="False"/>
-            <Entry x:Name="hepBolusEntry" Margin="0,5,0,0" IsVisible="False"/>
+            <Entry x:Name="hepBolusEntry" BackgroundColor="LightGray" Margin="0,5,0,0" IsVisible="False"/>
 
             <Label x:Name="hepDripLabel" Text="Heparin Drip chosen (total units/hr)" Margin="0,20,0,0" IsVisible="False"/>
-            <Entry x:Name="hepDripEntry" Margin="0,5,0,0" IsVisible="False"/>
+            <Entry x:Name="hepDripEntry" BackgroundColor="LightGray" Margin="0,5,0,0" IsVisible="False"/>
             
             <Button Text="Submit" Clicked="Submit_Clicked" Margin="0,30,0,0"/>
 

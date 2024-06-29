@@ -6,7 +6,7 @@
 
         <Label Text="*Only to be used in patients on citrate anticoagulation" HorizontalOptions="Center" TextColor="Red" Margin="0,5,0,20"/>
 
-        <Label Text="Calcium Ratio" FontSize="25" HorizontalOptions="Center" TextColor="White" />
+        <Label Text="Calcium Ratio" FontSize="25" HorizontalOptions="Center" />
     
         <Label Text="Total Serum Calcium" />
         <Entry x:Name="totLabel" Margin="0,5,0,0" TextChanged="RatioTextChanged"/>
