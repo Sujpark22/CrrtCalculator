@@ -6,16 +6,16 @@
 
             <Label Text="Presciption Details" FontSize="25" Margin="0,30,0,0" HorizontalOptions="Center" TextColor="FloralWhite" />
 
-            <Label x:Name="mrnLabel2" TextColor="FloralWhite"/>
-            <Label x:Name="accessLabel" TextColor="FloralWhite"/>
-            <Label x:Name="bfrLabel" TextColor="FloralWhite"/>
-            <Label x:Name="reLabel" TextColor="FloralWhite"/>
-            <Label x:Name="rfrLabel" TextColor="FloralWhite"/>
-            <Label x:Name="calcGTTLabel" TextColor="FloralWhite"/>
-            <Label x:Name="anticoLabel" TextColor="FloralWhite"/>
-            <Label x:Name="hepBolusLabel" TextColor="FloralWhite"/>
-            <Label x:Name="hepGTTLabel" TextColor="FloralWhite"/>
-            <Label x:Name="epDoseLabel" TextColor="FloralWhite"/>
+            <Label x:Name="mrnLabel2" />
+            <Label x:Name="accessLabel" />
+            <Label x:Name="bfrLabel" />
+            <Label x:Name="reLabel" />
+            <Label x:Name="rfrLabel" />
+            <Label x:Name="calcGTTLabel" />
+            <Label x:Name="anticoLabel" />
+            <Label x:Name="hepBolusLabel" />
+            <Label x:Name="hepGTTLabel" />
+            <Label x:Name="epDoseLabel" />
             
          </StackLayout>
     </ScrollView>
