@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.Maui.Controls;
 using Microsoft.Extensions.Logging;
-using static Microsoft.Maui.ApplicationModel.Permissions;
+using CRRT_Calculator.ViewModels;
+
 
 
 namespace CRRT_Calculator
@@ -11,7 +12,11 @@ namespace CRRT_Calculator
         public AquaCalcInputPage()
         {
             InitializeComponent();
+            //aquaModel = new AquaViewModel(); 
+            //BindingContext = aquaModel;
         }
+
+        //readonly ViewModels.AquaViewModel aquaModel;
 
         private async void OnClearPickerSelectedIndexChanged(object sender, EventArgs e)
         {

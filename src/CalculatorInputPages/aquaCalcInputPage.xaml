@@ -13,7 +13,7 @@
             <DatePicker x:Name="dobPicker" BackgroundColor="LightGray" Margin="0,5,0,0"/>
 
 			<Label Text=" Does the patient need rapid clearance? (yes or no)" Margin="0,25,0,0"/>
-            <Picker x:Name="clearPicker" BackgroundColor="LightGray" SelectedIndexChanged="OnClearPickerSelectedIndexChanged" Margin="0,5,0,0">
+            <Picker  x:Name="clearPicker" BackgroundColor="LightGray" Margin="0,5,0,0">
 				<Picker.ItemsSource>
 					<x:Array Type="{x:Type x:String}">
 						<x:String>Yes</x:String>

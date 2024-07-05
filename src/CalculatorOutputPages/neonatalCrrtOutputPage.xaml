@@ -6,19 +6,19 @@
 
             <Label Text="Presciption Details" FontSize="25" Margin="0,30,0,0" HorizontalOptions="Center" TextColor="FloralWhite" />
 
-            <Label x:Name="mrnLabel" />
-            <Label x:Name="accessLabel" />
-            <Label x:Name="filterLabel" />
-            <Label x:Name="bfrLabel" />
-            <Label x:Name="diaLabel" />
-            <Label x:Name="pbpLabel" />
-            <Label x:Name="postLabel" />
-            <Label x:Name="calcGTTLabel" />
-            <Label x:Name="anticoLabel" />
-            <Label x:Name="citLabel" />
-            <Label x:Name="hepBolusLabel" />
-            <Label x:Name="hepGTTLabel" />
-            <Label x:Name="bloodPrimeLabel" />
+            <Label x:Name="mrnLabel" TextColor="FloralWhite"/>
+            <Label x:Name="accessLabel" TextColor="FloralWhite"/>
+            <Label x:Name="filterLabel" TextColor="FloralWhite"/>
+            <Label x:Name="bfrLabel" TextColor="FloralWhite"/>
+            <Label x:Name="diaLabel" TextColor="FloralWhite"/>
+            <Label x:Name="pbpLabel" TextColor="FloralWhite"/>
+            <Label x:Name="postLabel" TextColor="FloralWhite"/>
+            <Label x:Name="calcGTTLabel" TextColor="FloralWhite"/>
+            <Label x:Name="anticoLabel" TextColor="FloralWhite"/>
+            <Label x:Name="citLabel" TextColor="FloralWhite"/>
+            <Label x:Name="hepBolusLabel" TextColor="FloralWhite"/>
+            <Label x:Name="hepGTTLabel" TextColor="FloralWhite"/>
+            <Label x:Name="bloodPrimeLabel" TextColor="FloralWhite"/>
 
         </StackLayout>
     </ScrollView>

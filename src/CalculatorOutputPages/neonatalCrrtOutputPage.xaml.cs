@@ -138,12 +138,12 @@ namespace CRRT_Calculator
             citLabel.Text = $"Citrate: {citDose}";
 
             //Heparin bolus (units)
-            hepBolusLabel.Text = $"Heparin blus: {heparinBolus}";
+            double hB = heparin == "Yes" ? double.Parse(heparinBolus) : 0;
+            hepGTTLabel.Text = $"Heparin bolus: {hB}";
 
             //Heparin gtt (units/kg/hr)
-            double heparinDripD = double.Parse(heparinDrip);
-            Double hepGTT = heparinDripD / weightD;
-            hepGTTLabel.Text = $"Heparin gtt (units/kg/hr): {hepGTT}";
+            double hG = heparin == "Yes" ? double.Parse(heparinDrip) / weightD : 0;
+            hepGTTLabel.Text = $"Heparin gtt (units/kg/hr): {hG}";
 
             //Blood Prime (if indicated)
             String bp;
