@@ -4,7 +4,7 @@
 	<ScrollView>
 		<StackLayout Margin="20">
 
-			<Label Text="Aquapheresis Calculator" FontSize="25" HorizontalOptions="Center" TextColor="White" />
+			<Label Text="Aquapheresis Calculator" FontSize="25" HorizontalOptions="Center"  />
 
 			<Label Text=" Patient MRN" />
             <Entry x:Name="mrnEntry" BackgroundColor="LightGray" Margin="0,5,0,0"/>
