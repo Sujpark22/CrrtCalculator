@@ -7,22 +7,27 @@ namespace CRRT_Calculator
 {
     public partial class EcmoCalcOutputPage : ContentPage
     {
-        public EcmoCalcOutputPage(string mrn, DateTime dob, string weight, string height, string clear, string antiEC, string citrate)
+        public EcmoCalcOutputPage(ViewModels.EcmoCalculatorInput input)
         {
             InitializeComponent();
 
             //patient mrn
-            mrnLabel2.Text = $"Patient mrn: {mrn}";
+            mrnLabel2.Text = $"Patient mrn: {input.Mrn}";
+
+            var dob = input.Dob;
+            var clear = input.Clear;
+            var citrate = input.Citrate;
 
             //filter
-            double weightD = double.Parse(weight);
-            double heightD = double.Parse(height);
+			double weightD = double.Parse(input.Weight!);
+            double heightD = double.Parse(input.Height!);
             string filter;
             filter = (weightD <= 12 && clear == "No") ? "CVVHD via HemoCor" :
                 (weightD <= 12 && clear == "Yes") ? "ST60" :
                 (weightD > 12 && weightD < 20) ? "ST60" :
                 (weightD >= 20) ? "HF1000" : "";
             filterLabel.Text = $"Filter: {filter}";
+
 
             //blood flow rate
             int ageYears = DateTime.Today.Year - dob.Year;

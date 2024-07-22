@@ -1,41 +1,29 @@
-﻿using System;
-using Microsoft.Maui.Controls;
-using Microsoft.Extensions.Logging;
-using static Microsoft.Maui.ApplicationModel.Permissions;
+﻿
+namespace CRRT_Calculator;
 
+using ViewModels;
 
-namespace CRRT_Calculator
+public partial class EcmoCalcInputPage : ContentPage
 {
-    public partial class EcmoCalcInputPage : ContentPage
-    {
-        public EcmoCalcInputPage()
-        {
-            InitializeComponent();
-        }
+	public EcmoCalcInputPage()
+	{
+		InitializeComponent();
 
+		BindingContext = _model = new EcmoCalculatorInput();
+	}
+
+	readonly EcmoCalculatorInput _model;
        
-        private async void Submit_Clicked(object sender, EventArgs e)
-        {
-            string mrn = mrnEntry.Text;
-            DateTime dob = dobPicker.Date;
-            string weight = weightEntry.Text;
-            string height = heightEntry.Text;
-            string clear = clearPicker.SelectedItem?.ToString();
-            string antiEC = antiPicker.SelectedItem?.ToString();
-            string citrate = citPicker.SelectedItem?.ToString();
+	private async void Submit_Clicked(object sender, EventArgs e)
+	{
+		_model.Validate(out var errors);
 
-            if (string.IsNullOrWhiteSpace(mrn) ||
-                string.IsNullOrWhiteSpace(weight) ||
-                string.IsNullOrWhiteSpace(height) ||
-                string.IsNullOrWhiteSpace(clear) ||
-                string.IsNullOrWhiteSpace(antiEC) ||
-                string.IsNullOrWhiteSpace(citrate))
-            {
-                await DisplayAlert("Error", "Please fill out all required fields.", "OK");
-                return;
-            }
+		if (errors.Any())
+		{
+			await DisplayAlert("Error", string.Join("\n", errors) , "OK");
+			return;
+		}
 
-            await Navigation.PushAsync(new EcmoCalcOutputPage(mrn, dob, weight, height, clear, antiEC, citrate));
-        }
-    }
+		await Navigation.PushAsync(new EcmoCalcOutputPage(_model));
+	}
 }
