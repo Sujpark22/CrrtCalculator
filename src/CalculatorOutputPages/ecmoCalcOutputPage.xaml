@@ -4,17 +4,17 @@
     <ScrollView>
         <StackLayout Margin="20">
 
-            <Label Text="ECMO CRRT Prescription" FontSize="25" Margin="0,30,0,0" HorizontalOptions="Center" TextColor="FloralWhite" />
+            <Label Text="ECMO CRRT Prescription" FontSize="25" Margin="0,30,0,0" HorizontalOptions="Center"  />
 
-            <Label x:Name="mrnLabel2" TextColor="FloralWhite"/>
-            <Label x:Name="filterLabel" TextColor="FloralWhite"/>
-            <Label x:Name="bfrLabel" TextColor="FloralWhite"/>
-            <Label x:Name="diaLabel" TextColor="FloralWhite"/>
-            <Label x:Name="pbpLabel" TextColor="FloralWhite"/>
-            <Label x:Name="pfrLabel" TextColor="FloralWhite"/>
-            <Label x:Name="citLabel" TextColor="FloralWhite"/>
+            <Label x:Name="mrnLabel2" />
+            <Label x:Name="filterLabel" />
+            <Label x:Name="bfrLabel"/>
+            <Label x:Name="diaLabel" />
+            <Label x:Name="pbpLabel" />
+            <Label x:Name="pfrLabel"/>
+            <Label x:Name="citLabel" />
             <Label x:Name="citWarning" TextColor="Red"/>
-            <Label x:Name="calcLabel" TextColor="FloralWhite"/>
+            <Label x:Name="calcLabel"/>
             <Label x:Name="calcWarning" TextColor="Red"/>
 
         </StackLayout>
