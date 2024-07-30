@@ -4,7 +4,7 @@
     <ScrollView>
         <StackLayout Margin="20">
 
-            <Label Text="Presciption Details" FontSize="25" Margin="0,30,0,0" HorizontalOptions="Center"  />
+            <Label Text="Presciption Details" FontSize="25" Margin="0,20,0,0" HorizontalOptions="Center"  />
 
             <Label x:Name="mrnLabel2" />
             <Label x:Name="accessLabel" />
