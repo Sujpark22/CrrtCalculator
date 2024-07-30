@@ -12,13 +12,13 @@ namespace CRRT_Calculator
         public AquaCalcInputPage()
         {
             InitializeComponent();
-            //aquaModel = new AquaViewModel(); 
-            //BindingContext = aquaModel;
+            _model = new AquaCalculatorInput(); 
+            BindingContext = _model;
         }
 
-        //readonly ViewModels.AquaViewModel aquaModel;
+        readonly ViewModels.AquaCalculatorInput _model;
 
-        private async void OnClearPickerSelectedIndexChanged(object sender, EventArgs e)
+        private async void OnClearChanged(object sender, EventArgs e)
         {
             if (clearPicker.SelectedItem.ToString() == "Yes")
             {
@@ -30,7 +30,7 @@ namespace CRRT_Calculator
             }
         }
 
-        private async void OnCandPickerSelectedIndexChanged(object sender, EventArgs e)
+        private async void OnCandChanged(object sender, EventArgs e)
         {
             if (candPicker.SelectedItem.ToString() == "No")
             {
@@ -42,7 +42,7 @@ namespace CRRT_Calculator
             }
         }
 
-        private async void OnEcmoPickerSelectedIndexChanged(object sender, EventArgs e)
+        private async void OnEcmoChanged(object sender, EventArgs e)
         {
             if (ecmoPicker.SelectedItem.ToString() == "Yes")
             {
@@ -54,7 +54,44 @@ namespace CRRT_Calculator
             }
         }
 
-        private void OnWeightEntryUnfocused(object sender, FocusEventArgs e)
+        private async void WeightEntry_Unfocused(object sender, FocusEventArgs e)
+        {
+            if (BindingContext is CrrtCalculatorInput viewModel)
+            {
+                viewModel.UpdateHeparinFields();
+                viewModel.CalculateBFR();
+                viewModel.OnWeightEntryUnfocused();
+            }
+        }
+
+        private void OnNavigateToHeparinDose(string heparin, string weight)
+        {
+            var hepWS = new Window(new HeparinDose(heparin, weight));
+
+            if (DeviceInfo.Platform == DevicePlatform.WinUI || DeviceInfo.Platform == DevicePlatform.macOS)
+            {
+                Application.Current.OpenWindow(hepWS);
+            }
+            else if (DeviceInfo.Platform == DevicePlatform.Android || DeviceInfo.Platform == DevicePlatform.iOS)
+            {
+                Navigation.PushAsync(new HeparinDose(heparin, weight));
+            }
+        }
+
+        private async void Submit_Clicked(object sender, EventArgs e)
+        {
+            _model.Validate(out var errors);
+
+            if (errors.Any())
+            {
+                await DisplayAlert("Error", string.Join("\n", errors), "OK");
+                return;
+            }
+
+            await Navigation.PushAsync(new AquaCalcOutputPage(_model));
+        }
+
+        /*private void OnWeightEntryUnfocused(object sender, FocusEventArgs e)
         {
             if (double.TryParse(weightEntry.Text, out double weight))
             {
@@ -144,6 +181,6 @@ namespace CRRT_Calculator
             }
 
             await Navigation.PushAsync(new AquaCalcOutputPage(mrn, dob, clear, cand, mod, ecmo, weight, height, reinfusion, heparin, heparinBolus, heparinGTT, epop));
-        }
+        }*/
     }
 }

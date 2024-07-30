@@ -7,15 +7,15 @@ namespace CRRT_Calculator
 {
     public partial class AquaCalcOutputPage : ContentPage
     {
-        public AquaCalcOutputPage(string mrn, DateTime dob, string clear, string cand, string mod, string ecmo, string weight, string height, string reinfusion, string heparin, string heparinBolus, string heparinGTT, string epop)
+        public AquaCalcOutputPage(ViewModels.AquaCalculatorInput input)
         {
             InitializeComponent();
 
             //patient mrn
-            mrnLabel2.Text = $"Patient mrn: {mrn}";
+            mrnLabel2.Text = $"Patient mrn: {input.Mrn}";
 
             //access
-            double weightD = double.Parse(weight);
+            double weightD = double.Parse(input.Weight);
             string access;
             if (weightD < 3 && weightD >= 1.8)
             {
@@ -54,31 +54,31 @@ namespace CRRT_Calculator
             }
 
             //reinfusion fluid
-            reLabel.Text = $"Reinfusion fluid: {reinfusion}";
+            reLabel.Text = $"Reinfusion fluid: {input.Fluid}";
 
             //reinfusion fluid rate
-            double modAquaDose = mod == "Yes" ? 24 * weightD : 0;
+            double modAquaDose = input.Mod == "Yes" ? 24 * weightD : 0;
             rfrLabel.Text = $"Reinfusion fluid rate (ml/hr): {Math.Ceiling(modAquaDose / 5) * 5}";
 
             //Calcium gtt
-            double calcGTT = reinfusion == "Phoxillium 4/2.5" ? 0.5 * weightD : weightD;
+            double calcGTT = input.Fluid == "Phoxillium 4/2.5" ? 0.5 * weightD : weightD;
             calcGTTLabel.Text = $"Calcium gtt (ml/hr): {calcGTT}";
 
             //Anticoagulation
-            string anti = heparin == "Yes" ? "Heparin" : epop == "Yes" ? "Epoprostenol" : "None";
+            string anti = input.Heparin == "Yes" ? "Heparin" : input.Epop == "Yes" ? "Epoprostenol" : "None";
             anticoLabel.Text = $"Anticoagulation: {anti}";
 
             //heparin bolus dose
-            double hepDose = heparin == "Yes" ? double.Parse(heparinBolus) : 0;
+            double hepDose = input.Heparin == "Yes" ? double.Parse(input.HepBol) : 0;
             hepBolusLabel.Text = $"Heparin bolus dose (units): {hepDose}";
 
             //Heparin gtt rate (units/kg/hr)
-            double gttRate = heparin == "Yes" ? double.Parse(heparinGTT) / weightD : 0;
+            double gttRate = input.Heparin == "Yes" ? double.Parse(input.HepGTT) / weightD : 0;
             hepGTTLabel.Text = $"Heparin gtt rate (units/kg/hr): {gttRate}";
 
             //Epoprostenol
-            string epDose = epop == "Yes" ? "Start at 2 ng/kg/min and increase by 2 ng/kg/min to a max of 8 ng/kg/min" : "N/A";
-            string ep = epop == "Yes" ? epDose : "0";
+            string epDose = input.Epop == "Yes" ? "Start at 2 ng/kg/min and increase by 2 ng/kg/min to a max of 8 ng/kg/min" : "N/A";
+            string ep = input.Epop == "Yes" ? epDose : "0";
             epDoseLabel.Text = $"Epoprostenol: {ep}";
 
         }
