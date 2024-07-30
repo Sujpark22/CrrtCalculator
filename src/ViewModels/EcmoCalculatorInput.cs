@@ -16,18 +16,6 @@ public partial class EcmoCalculatorInput : ObservableObject
 	[ObservableProperty]
 	DateTime _dob;
 
-	//public bool IsInvalid()
-	//{
-	//	return string.IsNullOrWhiteSpace(Mrn) ||
-	//		isInvalidNumber(Weight) ||
-	//		isInvalidNumber(Height) ||
-	//		string.IsNullOrWhiteSpace(Clear) ||
-	//		string.IsNullOrWhiteSpace(AntiEC) ||
-	//		string.IsNullOrWhiteSpace(Citrate);
-
-	//	static bool isInvalidNumber(string? number) => !double.TryParse(number, out _);
-	//}
-
 	public void Validate(out List<string> errors)
 	{
 		errors = [];

@@ -6,17 +6,17 @@ namespace CRRT_Calculator
 {
     public partial class CrrtCalcOutputPage : ContentPage
     {
-        public CrrtCalcOutputPage(string mrn, DateTime dob, string ecmo, string weight, string height, string aqua, string bloodFlowRate, string heparin, string citrate, string liverDysfunction, string heparinBolus, string heparinDrip)
+        public CrrtCalcOutputPage(ViewModels.CrrtCalculatorInput input)
         {
             InitializeComponent();
 
             //prescription details
             //patient mrn
-            mrnLabel.Text = $"Patient mrn: {mrn}";
+            mrnLabel.Text = $"Patient mrn: {input.Mrn}";
 
             //access
             String access;
-            double weightD = double.Parse(weight);
+            double weightD = double.Parse(input.Weight);
             if (weightD >= 1.8 && weightD < 10)
             {
                 access = "7-8FR";
@@ -56,10 +56,10 @@ namespace CRRT_Calculator
             filterLabel.Text = $"Filter: {filter}";
 
             //Blood Flow Rate
-            bfrLabel.Text = $"Blood FLow Rate: {bloodFlowRate}";
+            bfrLabel.Text = $"Blood FLow Rate: {input.BFR}";
 
             //Dialysate (ml/hr)
-            Double heightD = double.Parse(height);
+            Double heightD = double.Parse(input.Height);
             Double bsa = 0.007184 * Math.Pow(weightD, 0.425) * Math.Pow(heightD, 0.725);
             Double crrtDoseUnder12 = weightD <= 12 ? 30 * weightD : 0;
             Double crrtDoseOver12 = (weightD > 12) ? (2000 * bsa / 1.73) : 0;
@@ -87,23 +87,23 @@ namespace CRRT_Calculator
 
             //Calcium gtt
             double citDose;
-            int years = DateTime.Today.Year - dob.Year;
-            if (DateTime.Today < dob.AddYears(years))
+            int years = DateTime.Today.Year - input.Dob.Year;
+            if (DateTime.Today < input.Dob.AddYears(years))
             {
                 years--;
             }
             bool isLessThanOneYear = (years < 1);
-            Double bfr = double.Parse(bloodFlowRate);
+            Double bfr = double.Parse(input.BFR);
 
-            if (liverDysfunction == "Yes" && citrate == "Yes")
+            if (input.LivDys == "Yes" && input.Citrate == "Yes")
             {
                 citDose = 0.75 * bfr;
             }
-            else if (citrate == "Yes" && isLessThanOneYear)
+            else if (input.Citrate == "Yes" && isLessThanOneYear)
             {
                 citDose = 0.75 * bfr;
             }
-            else if (citrate == "Yes" && liverDysfunction == "No" && !isLessThanOneYear)
+            else if (input.Citrate == "Yes" && input.LivDys == "No" && !isLessThanOneYear)
             {
                 citDose = 1.5 * bfr;
             }
@@ -112,22 +112,22 @@ namespace CRRT_Calculator
                 citDose = 0;
             }
 
-            double calcDrip1 = (citrate == "Yes") ? 0.4 * citDose : 0;
-            double calcDrip2 = (citrate == "No") ? 1 * weightD : 0;
-            double calcGTT = (citrate == "Yes") ? calcDrip1 : calcDrip2;
+            double calcDrip1 = (input.Citrate == "Yes") ? 0.4 * citDose : 0;
+            double calcDrip2 = (input.Citrate == "No") ? 1 * weightD : 0;
+            double calcGTT = (input.Citrate == "Yes") ? calcDrip1 : calcDrip2;
             calcGTTLabel.Text = $"Calcium GTT: {calcGTT}";
 
             //Anticoagulation
             String anti = "";
-            if (heparin == "Yes")
+            if (input.Heparin == "Yes")
             {
                 anti = "Heparin";
             }
-            if (heparin == "No" && citrate == "Yes")
+            if (input.Heparin == "No" && input.Citrate == "Yes")
             {
                 anti = "Citrate";
             }
-            if (heparin == "No" && citrate == "No")
+            if (input.Heparin == "No" && input.Citrate == "No")
             {
                 anti = "None or Epoprostenol";
             }
@@ -137,16 +137,16 @@ namespace CRRT_Calculator
             //Citrate
             citLabel.Text = $"Citrate: {citDose}";
 
-            double hepDose = heparin == "Yes" ? double.Parse(heparinBolus) : 0;
+            double hepDose = input.Heparin == "Yes" ? double.Parse(input.HepBol) : 0;
             hepBolusLabel.Text = $"Heparin bolus (units): {hepDose}";
 
             //Heparin bolus (units)
-            double hB = heparin == "Yes" ? double.Parse(heparinBolus) : 0;
+            double hB = input.Heparin == "Yes" ? double.Parse(input.HepBol) : 0;
             hepGTTLabel.Text = $"Heparin bolus: {hB}";
 
 
             //Heparin gtt (units/kg/hr)
-            double hG = heparin == "Yes" ? double.Parse(heparinDrip) / weightD : 0;
+            double hG = input.Heparin == "Yes" ? double.Parse(input.HepDrip) / weightD : 0;
             hepGTTLabel.Text = $"Heparin gtt (units/kg/hr): {hG}";
 
             //Blood Prime (if indicated)

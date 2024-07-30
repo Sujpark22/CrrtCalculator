@@ -1,11 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using static Microsoft.Maui.ApplicationModel.Permissions;
 
-namespace CRRT_Calculator.ViewModels {
-
-    public partial class NeoCalculatorInput : ObservableObject
+namespace CRRT_Calculator.ViewModels
+{
+    public partial class CrrtCalculatorInput : ObservableObject
     {
         [ObservableProperty]
-        private string? _Mrn, _Weight, _Height, _Citrate, _LivDys, _BFR, _minBFR, _maxBFR, _heparin, _hepBol, _hepDrip;
+        private string? _Mrn, _Ecmo, _Weight, _Warning, _Height, _Aqua, _Citrate, _LivDys, _BFR, _minBFR, _maxBFR, _heparin, _hepBol, _hepDrip;
 
         [ObservableProperty]
         private DateTime _dob;
@@ -14,11 +16,73 @@ namespace CRRT_Calculator.ViewModels {
         private bool _isHepBolLabelVisible, _isHepBolusEntryVisible, _isHepDripLabelVisible, _isHepDripEntryVisible;
 
         public event Action<string, string> NavigateToHeparinDose;
+        /*public event Func<string, Task> EcmoChanged;
+        public event Func<string, Task> AquaChanged;
 
+        private void SetEcmo(string value)
+        {
+            Ecmo = value; // This should trigger OnEcmoChanged
+        }
+
+        private void SetAqua(string value)
+        {
+            Aqua = value; // This should trigger OnAquaChanged
+        }
+
+        partial void OnEcmoChanged(string? value)
+        {
+            if (value == "Yes")
+            {
+                EcmoChanged?.Invoke(value);
+            }
+        }
+
+        partial void OnAquaChanged(string? value)
+        {
+            if (value == "Yes")
+            {
+                 AquaChanged?.Invoke(value);
+            }
+        }*/
 
         partial void OnDobChanged(DateTime value)
         {
             CalculateBFR();
+        }
+
+
+        private async Task EvaluateWeight(double weight)
+        {
+            if (weight <= 8 && weight >= 1.8)
+            {
+                Warning = "*Should Consider Aquapheresis First";
+            }
+            else if (weight <= 12 && weight > 8)
+            {
+                Warning = "*May consider Aquapheresis if indicated";
+            }
+            else if (weight < 1.8)
+            {
+                Warning = "*Reconsider RRT";
+            }
+            else
+            {
+                Warning = string.Empty;
+            }
+        }
+
+        public async void OnWeightEntryUnfocused()
+        {
+            if (double.TryParse(Weight, out double weight))
+            {
+                EvaluateWeight(weight);
+                CalculateBFR();
+            }
+            else
+            {
+                Warning = string.Empty;
+            }
+            UpdateHeparinFields();
         }
 
         partial void OnHeparinChanged(string? value)
@@ -26,7 +90,8 @@ namespace CRRT_Calculator.ViewModels {
             UpdateHeparinFields();
         }
 
-        partial void OnBFRChanged(string? value) {
+        partial void OnBFRChanged(string? value)
+        {
             if (double.TryParse(value, out double bloodFlowRate))
             {
                 if (bloodFlowRate > 150)
@@ -84,14 +149,17 @@ namespace CRRT_Calculator.ViewModels {
             errors = [];
 
             check(Mrn, "MRN", errors);
+            check(Ecmo, "ECMO", errors);
             checkNumber(Weight, "Weight", errors);
             checkNumber(Height, "Height", errors);
+            check(Aqua, "Aquapheresis", errors);
             check(Citrate, "Citrate", errors);
             check(LivDys, "Liver Dysfuntion", errors);
             checkNumber(BFR, "Blood Flow Rate", errors);
             check(Heparin, "Heparin", errors);
 
-            if (Heparin == "Yes") {
+            if (Heparin == "Yes")
+            {
                 checkNumber(HepBol, "Heparin Bolus", errors);
                 checkNumber(HepDrip, "Heparin Drip", errors);
             }
@@ -108,5 +176,7 @@ namespace CRRT_Calculator.ViewModels {
                     errors.Add($"{caption} is invalid number");
             }
         }
+
+
     }
 }
