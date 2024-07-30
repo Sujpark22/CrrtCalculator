@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.Maui.Controls;
 using Microsoft.Extensions.Logging;
+using CRRT_Calculator.ViewModels;
+using System.Diagnostics;
 
 
 namespace CRRT_Calculator
@@ -10,9 +12,51 @@ namespace CRRT_Calculator
         public NeonatalCrrtInputPage()
         {
             InitializeComponent();
+
+            BindingContext = _model = new NeoCalculatorInput();
+            _model.NavigateToHeparinDose += OnNavigateToHeparinDose;
         }
 
-        private void OnDobPickerDateSelected(object sender, DateChangedEventArgs e)
+        readonly NeoCalculatorInput _model;
+
+
+        private void WeightEntry_Unfocused(object sender, FocusEventArgs e)
+        {
+            if (BindingContext is NeoCalculatorInput viewModel)
+            {
+                viewModel.UpdateHeparinFields();
+                viewModel.CalculateBFR();
+            }
+        }
+        private void OnNavigateToHeparinDose(string heparin, string weight)
+        {
+            var hepWS = new Window(new HeparinDose(heparin, weight));
+
+            if (DeviceInfo.Platform == DevicePlatform.WinUI || DeviceInfo.Platform == DevicePlatform.macOS)
+            {
+                Application.Current.OpenWindow(hepWS);
+            }
+            else if (DeviceInfo.Platform == DevicePlatform.Android || DeviceInfo.Platform == DevicePlatform.iOS)
+            {
+                Navigation.PushAsync(new HeparinDose(heparin, weight));
+            }
+        }
+
+        private async void Submit_Clicked(object sender, EventArgs e)
+        {
+            _model.Validate(out var errors);
+
+            if (errors.Any())
+            {
+                await DisplayAlert("Error", string.Join("\n", errors), "OK");
+                return;
+            }
+
+            await Navigation.PushAsync(new NeonatalCrrtOutputPage(_model));
+        }
+
+
+        /*private void OnDobPickerDateSelected(object sender, DateChangedEventArgs e)
         {
             CalculateBloodFlowRates();
         }
@@ -25,7 +69,6 @@ namespace CRRT_Calculator
 
         private void CalculateBloodFlowRates()
         {
-            // Get the inputted weight and date of birth
             if (double.TryParse(weightEntry.Text, out double weight))
             {
                 DateTime dob = dobPicker.Date;
@@ -122,6 +165,6 @@ namespace CRRT_Calculator
                 return;
             }
             await Navigation.PushAsync(new NeonatalCrrtOutputPage(mrn, dob, weight, height, bloodFlowRate, heparin, citrate, liverDysfunction, heparinBolus, heparinDrip));
-        }
+        }*/
     }
 }
