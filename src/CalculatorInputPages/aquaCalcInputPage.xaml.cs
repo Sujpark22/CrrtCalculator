@@ -14,6 +14,7 @@ namespace CRRT_Calculator
             InitializeComponent();
             _model = new AquaCalculatorInput(); 
             BindingContext = _model;
+            _model.NavigateToHeparinDose += OnNavigateToHeparinDose;
         }
 
         readonly ViewModels.AquaCalculatorInput _model;
@@ -56,10 +57,8 @@ namespace CRRT_Calculator
 
         private async void WeightEntry_Unfocused(object sender, FocusEventArgs e)
         {
-            if (BindingContext is CrrtCalculatorInput viewModel)
+            if (BindingContext is AquaCalculatorInput viewModel)
             {
-                viewModel.UpdateHeparinFields();
-                viewModel.CalculateBFR();
                 viewModel.OnWeightEntryUnfocused();
             }
         }

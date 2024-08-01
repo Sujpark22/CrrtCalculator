@@ -36,7 +36,7 @@ namespace CRRT_Calculator.ViewModels
         {
             if (double.TryParse(Weight, out double weight))
             {
-                EvaluateWeight(weight);
+                await EvaluateWeight(weight);
             }
             else
             {
@@ -77,16 +77,14 @@ namespace CRRT_Calculator.ViewModels
             errors = [];
 
             check(Mrn, "MRN", errors);
-            check(Clear, "ECMO", errors);
-            check(Cand, "ECMO", errors);
-            check(Mod, "ECMO", errors);
-            check(Ecmo, "ECMO", errors);
+            //check(Clear, "Rapid clearance", errors);
+            //check(Cand, "Candidate for aquapheresis", errors);
+            check(Mod, "'Modified' aquapheresis with CVVH?", errors);
+            //check(Ecmo, "ECMO", errors);
             checkNumber(Weight, "Weight", errors);
             checkNumber(Height, "Height", errors);
             check(Fluid, "Aquapheresis", errors);
-            check(Citrate, "Citrate", errors);
-            check(LivDys, "Liver Dysfuntion", errors);
-            checkNumber(Epop, "Blood Flow Rate", errors);
+            check(Epop, "Epoprostenol", errors);
             check(Heparin, "Heparin", errors);
 
             if (Heparin == "Yes")
